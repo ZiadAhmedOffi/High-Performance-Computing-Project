@@ -1,6 +1,6 @@
 /**
  * @file parser.hpp
- * @author [Student Name]
+ * @author Ziad Ahmed
  * @brief Expression parser and evaluator using Shunting-Yard and RPN.
  */
 

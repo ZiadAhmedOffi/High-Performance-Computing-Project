@@ -1,6 +1,6 @@
 /**
  * @file utils.hpp
- * @author [Student Name]
+ * @author Ziad Ahmed
  * @brief Utility functions for system info and timing.
  */
 
