@@ -80,9 +80,9 @@ This script will produce a CSV file and plots in the `experiments/results/` dire
 - GPU: NVIDIA GPU with CUDA support (Compute Capability 7.0+)
 
 ## Authors
-Ahmed Osama Ibrahim
-Ziad Ahmed Mohamed
-Mahmoud Atef Mahmoud
-Yassin Ahmed Nasr
-**Benha University - Shoubra College of Engineering**
+Ahmed Osama Ibrahim\
+Ziad Ahmed Mohamed\
+Mahmoud Atef Mahmoud\
+Yassin Ahmed Nasr\
+**Benha University - Shoubra College of Engineering**\
 HPC Project Assignment
