@@ -79,7 +79,10 @@ This script will produce a CSV file and plots in the `experiments/results/` dire
 - CPU: Multi-core with OpenMP support
 - GPU: NVIDIA GPU with CUDA support (Compute Capability 7.0+)
 
-## Author
-[Student Name]
-[College/University]
+## Authors
+Ahmed Osama Ibrahim
+Ziad Ahmed Mohamed
+Mahmoud Atef Mahmoud
+Yassin Ahmed Nasr
+**Benha University - Shoubra College of Engineering**
 HPC Project Assignment
