@@ -1,5 +1,5 @@
 # @file run_experiments.sh
-# @author [Ahmed Osama Ibrahim]
+# @author Ahmed Osama Ibrahim
 # @brief builds the project and runs all experiments automatically, making it easy to get consistent results.
 
 #!/bin/bash

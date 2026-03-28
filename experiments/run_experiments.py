@@ -1,5 +1,5 @@
 # @file run_experiments.py
-# @author [Ahmed Osama Ibrahim]
+# @author Ahmed Osama Ibrahim
 # @brief automates running performance tests on the integrator and collects the results.
 
 import subprocess

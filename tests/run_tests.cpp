@@ -1,6 +1,6 @@
 /**
  * @file run_tests.cpp
- * @author [Ahmed Osama Ibrahim]
+ * @author Ahmed Osama Ibrahim
  * @brief Unit tests for the HPC Integrator and Parser.
  */
 

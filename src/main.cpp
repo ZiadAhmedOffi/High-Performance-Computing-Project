@@ -1,7 +1,8 @@
-/** @file main.cpp
- ##* @author [Mahmoud Atef]
- ##* @brief CLI entry point for HPC Numerical Integrator.
-*/
+/**
+ * @file main.cpp
+ * @author Mahmoud Atef
+ * @brief CLI entry point for HPC Numerical Integrator.
+ */
 
 #include "parser.hpp"
 #include "integrator.hpp"
@@ -90,8 +91,8 @@ int main(int argc, char** argv) {
 
     Utils::log_system_info();
 
-    double total_time = 0;
-    double total_mem_time = 0;
+    std::vector<double> times;
+    std::vector<double> mem_times;
     IntegrationResult res;
 
     for (int i = 0; i < repeats; ++i) {
@@ -102,11 +103,20 @@ int main(int argc, char** argv) {
             std::cerr << "Unknown implementation: " << impl << std::endl;
             return 1;
         }
-        total_time += res.time_ms;
-        total_mem_time += res.mem_transfer_time_ms;
+        times.push_back(res.time_ms);
+        mem_times.push_back(res.mem_transfer_time_ms);
     }
 
+    double total_time = 0;
+    for (double t : times) total_time += t;
     double avg_time = total_time / repeats;
+    
+    double variance = 0;
+    for (double t : times) variance += (t - avg_time) * (t - avg_time);
+    double stdev = (repeats > 1) ? std::sqrt(variance / (repeats - 1)) : 0;
+
+    double total_mem_time = 0;
+    for (double t : mem_times) total_mem_time += t;
     double avg_mem_time = total_mem_time / repeats;
 
     std::cout << std::fixed << std::setprecision(10);
@@ -117,6 +127,7 @@ int main(int argc, char** argv) {
     std::cout << "Impl:       " << impl << std::endl;
     std::cout << "Result:     " << res.value << std::endl;
     std::cout << "Avg Time:   " << avg_time << " ms" << std::endl;
+    std::cout << "Std Dev:    " << stdev << " ms" << std::endl;
     if (impl == "cuda") {
         std::cout << "Avg Mem:    " << avg_mem_time << " ms" << std::endl;
         std::cout << "Compute %:  " << (avg_time / (avg_time + avg_mem_time)) * 100 << "%" << std::endl;
